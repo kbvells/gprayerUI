@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize all features
     initMobileMenu();
     initScreenshotsSlider();
+    initHeroMediaCarousel();
     // Don't initialize separate videos section - videos are in screenshots now
     initSmoothScroll();
     initScrollAnimations();
@@ -18,6 +19,32 @@ document.addEventListener('DOMContentLoaded', () => {
         videosSection.style.display = 'none';
     }
 });
+
+// ===================================
+// HERO MEDIA CAROUSEL
+// ===================================
+function initHeroMediaCarousel() {
+    const carousel = document.querySelector('.media-carousel');
+    const track = document.querySelector('.media-track');
+    const prevBtn = document.querySelector('.hero-media-prev');
+    const nextBtn = document.querySelector('.hero-media-next');
+    
+    if (!carousel || !track || !prevBtn || !nextBtn) return;
+    
+    function getScrollStep() {
+        const card = track.querySelector('.phone-mockup');
+        const gap = parseFloat(getComputedStyle(track).gap || '0');
+        return (card ? card.offsetWidth : 320) + gap;
+    }
+    
+    prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+    });
+}
 
 // ===================================
 // MOBILE MENU

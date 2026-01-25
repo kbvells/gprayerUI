@@ -15,7 +15,7 @@ section {
 }
 
 .hero-content {
-    gap: 30px !important;
+    gap: var(--hero-gap) !important;
 }
 
 .hero-stats {
