@@ -1,0 +1,28 @@
+# 1. Ignore everything by default
+*
+
+# 2. But allow directories (necessary to look inside them)
+!*/
+
+# 3. Allow specific file extensions required for your project
+!*.html
+!*.css
+!*.js
+
+# 4. Allow Image files
+!*.jpg
+!*.jpeg
+!*.png
+!*.gif
+!*.svg
+!*.webp
+!*.ico
+
+# 5. Allow Video files
+!*.mp4
+!*.webm
+!*.ogg
+
+# 6. Specifically keep the .gitignore file itself
+!.gitignore
+

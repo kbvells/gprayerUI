@@ -1,0 +1,179 @@
+/* ================================
+   COMPACT SPACING OVERRIDES
+   Add this file to reduce spacing
+   ================================ */
+
+/* Reduce section padding */
+section {
+    padding: 40px 0 !important;
+}
+
+/* Reduce hero section spacing */
+.hero {
+    padding: 60px 0 40px !important;
+    min-height: auto !important;
+}
+
+.hero-content {
+    gap: 30px !important;
+}
+
+.hero-stats {
+    margin-top: 20px !important;
+    gap: 15px !important;
+}
+
+/* Reduce feature spacing */
+.features {
+    padding: 40px 0 !important;
+}
+
+.features-grid {
+    gap: 20px !important;
+    margin-top: 30px !important;
+}
+
+.feature-card {
+    padding: 20px !important;
+}
+
+.section-header {
+    margin-bottom: 30px !important;
+}
+
+.section-title {
+    margin-bottom: 10px !important;
+    font-size: 2rem !important;
+}
+
+.section-subtitle {
+    font-size: 1rem !important;
+}
+
+/* Reduce screenshots section spacing */
+.screenshots {
+    padding: 40px 0 !important;
+}
+
+.screenshots-slider {
+    margin-top: 30px !important;
+}
+
+/* Reduce videos section spacing */
+.videos {
+    padding: 40px 0 !important;
+}
+
+.videos-grid {
+    gap: 20px !important;
+    margin-top: 30px !important;
+}
+
+/* Reduce pricing section spacing */
+.pricing {
+    padding: 40px 0 !important;
+}
+
+.pricing-grid {
+    gap: 20px !important;
+    margin-top: 30px !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+}
+
+.pricing-card {
+    padding: 25px !important;
+}
+
+.pricing-features {
+    margin: 20px 0 !important;
+    gap: 8px !important;
+}
+
+.pricing-note {
+    margin-top: 20px !important;
+}
+
+/* Reduce testimonials spacing */
+.testimonials {
+    padding: 40px 0 !important;
+}
+
+.testimonials-grid {
+    gap: 20px !important;
+    margin-top: 30px !important;
+}
+
+.testimonial-card {
+    padding: 20px !important;
+}
+
+/* Reduce download section spacing */
+.download {
+    padding: 40px 0 !important;
+}
+
+.download-content {
+    gap: 30px !important;
+}
+
+.download-info {
+    margin-top: 20px !important;
+}
+
+.download-info p {
+    margin: 5px 0 !important;
+}
+
+/* Reduce contact section spacing */
+.contact {
+    padding: 40px 0 !important;
+}
+
+.contact-info {
+    gap: 20px !important;
+    margin-top: 30px !important;
+}
+
+.contact-card {
+    padding: 20px !important;
+}
+
+/* Reduce footer spacing */
+.footer {
+    padding: 30px 0 20px !important;
+}
+
+.footer-content {
+    margin-bottom: 20px !important;
+}
+
+/* Reduce button spacing */
+.hero-buttons {
+    gap: 15px !important;
+    margin-top: 20px !important;
+}
+
+.btn {
+    padding: 12px 24px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section {
+        padding: 30px 0 !important;
+    }
+    
+    .hero {
+        padding: 40px 0 30px !important;
+    }
+    
+    .section-title {
+        font-size: 1.75rem !important;
+    }
+    
+    .pricing-grid,
+    .features-grid,
+    .testimonials-grid {
+        gap: 15px !important;
+    }
+}
