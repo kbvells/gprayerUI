@@ -1303,13 +1303,19 @@ button {
     }
 }
 
-@media (min-width: 1400px) {
+@media (max-width: 900px) {
+    .media-carousel {
+        --media-cards-per-view: 1;
+    }
+}
+
+@media (min-width: 1200px) {
     .media-carousel {
         --media-cards-per-view: 3;
     }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1700px) {
     .media-carousel {
         --media-cards-per-view: 4;
     }
@@ -1367,6 +1373,12 @@ button {
     
     .slider-btn {
         display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .phone-mockup {
+        width: min(86vw, 340px);
     }
 }
 
