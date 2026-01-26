@@ -4,7 +4,7 @@
    ================================ */
 
 /* Reduce section padding */
-section {
+body:not(.privacy-page) section {
     padding: 40px 0 !important;
 }
 

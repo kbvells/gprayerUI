@@ -1199,6 +1199,15 @@ button {
     margin-bottom: 1rem;
 }
 
+.privacy-page section {
+    padding: 0;
+    margin: 0;
+}
+
+.privacy-page .privacy-content section + section {
+    margin-top: 1.6rem;
+}
+
 .privacy-content ul {
     list-style: disc;
     margin-left: 1.5rem;
