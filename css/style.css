@@ -219,7 +219,7 @@ button {
 }
 
 .btn-download-nav {
-    padding: 0.5rem 1.2rem;
+    padding: 0.7rem 0.5rem !important;
     background: var(--gradient-primary);
     color: var(--white);
     border-radius: var(--radius-full);
@@ -445,6 +445,7 @@ button {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
 }
 
 .media-carousel {
@@ -455,6 +456,7 @@ button {
     scrollbar-width: none;
     padding-right: 1vw;
     scroll-snap-type: x mandatory;
+    --media-cards-per-view: 2;
 }
 
 .media-carousel::-webkit-scrollbar {
@@ -463,16 +465,17 @@ button {
 
 .media-track {
     display: flex;
-    gap: clamp(14px, 2vw, 28px);
+    --media-gap: clamp(14px, 2vw, 28px);
+    gap: var(--media-gap);
     align-items: center;
-    width: max-content;
+    width: 100%;
     min-width: 100%;
 }
 
 .phone-mockup {
     position: relative;
-    width: calc((100% - var(--hero-gap)) / 2);
-    max-width: 420px;
+    width: calc((100% - (var(--media-cards-per-view) - 1) * var(--media-gap)) / var(--media-cards-per-view));
+    min-width: 220px;
     flex: 0 0 auto;
     scroll-snap-align: start;
     animation: float 6s ease-in-out infinite;
@@ -1278,8 +1281,8 @@ button {
         padding: 0 2vw;
     }
 
-    .phone-mockup {
-        width: clamp(260px, 65vw, 420px);
+    .media-carousel {
+        --media-cards-per-view: 1;
     }
     
     .footer-content {
@@ -1288,6 +1291,18 @@ button {
 
     .footer-links {
         grid-template-columns: repeat(2, minmax(140px, 1fr));
+    }
+}
+
+@media (min-width: 1400px) {
+    .media-carousel {
+        --media-cards-per-view: 3;
+    }
+}
+
+@media (min-width: 1800px) {
+    .media-carousel {
+        --media-cards-per-view: 4;
     }
 }
 
