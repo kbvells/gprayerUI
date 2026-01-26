@@ -534,6 +534,12 @@ button {
     box-shadow: var(--shadow-xl);
 }
 
+.media-nav-btn.is-disabled {
+    opacity: 0.35;
+    pointer-events: none;
+    box-shadow: var(--shadow-md);
+}
+
 .hero-media-prev {
     left: -8px;
 }

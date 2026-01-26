@@ -30,6 +30,16 @@ function initHeroMediaCarousel() {
     const nextBtn = document.querySelector('.hero-media-next');
     
     if (!carousel || !track || !prevBtn || !nextBtn) return;
+
+    function updateNavButtons() {
+        const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+        const atStart = carousel.scrollLeft <= 1;
+        const atEnd = carousel.scrollLeft >= maxScrollLeft - 1;
+        prevBtn.classList.toggle('is-disabled', atStart);
+        nextBtn.classList.toggle('is-disabled', atEnd);
+        prevBtn.setAttribute('aria-disabled', atStart ? 'true' : 'false');
+        nextBtn.setAttribute('aria-disabled', atEnd ? 'true' : 'false');
+    }
     
     function getScrollStep() {
         const card = track.querySelector('.phone-mockup');
@@ -44,6 +54,13 @@ function initHeroMediaCarousel() {
     nextBtn.addEventListener('click', () => {
         carousel.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
     });
+
+    carousel.addEventListener('scroll', () => {
+        window.requestAnimationFrame(updateNavButtons);
+    });
+
+    window.addEventListener('resize', updateNavButtons);
+    updateNavButtons();
 }
 
 // ===================================
