@@ -95,6 +95,10 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body::before {
@@ -119,6 +123,14 @@ a {
     text-decoration: none;
     color: inherit;
     transition: all var(--transition-base);
+}
+
+input,
+textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 button {
@@ -934,6 +946,9 @@ button {
 }
 
 .download-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
 }
 
@@ -1359,13 +1374,13 @@ button {
 
 @media (min-width: 1200px) {
     .media-carousel {
-        --media-cards-per-view: 3;
+        --media-cards-per-view: 2;
     }
 }
 
 @media (min-width: 1700px) {
     .media-carousel {
-        --media-cards-per-view: 4;
+        --media-cards-per-view: 2;
     }
 }
 

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initScreenshotsSlider();
     initHeroMediaCarousel();
+    initContentProtection();
     // Don't initialize separate videos section - videos are in screenshots now
     initSmoothScroll();
     initScrollAnimations();
@@ -19,6 +20,37 @@ document.addEventListener('DOMContentLoaded', () => {
         videosSection.style.display = 'none';
     }
 });
+
+// ===================================
+// CONTENT PROTECTION
+// ===================================
+function initContentProtection() {
+    document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+    });
+
+    document.addEventListener('dragstart', (e) => {
+        if (e.target && e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener('copy', (e) => {
+        e.preventDefault();
+    });
+
+    document.addEventListener('cut', (e) => {
+        e.preventDefault();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!(e.ctrlKey || e.metaKey)) return;
+        const key = e.key.toLowerCase();
+        if (key === 's' || key === 'p' || key === 'u') {
+            e.preventDefault();
+        }
+    });
+}
 
 // ===================================
 // HERO MEDIA CAROUSEL
